@@ -29,18 +29,18 @@ function countingValleys(n, s) {
     let counter = 0;
     let uCount = 0;
     typeof s === 'string' && (s = s.toUpperCase());
-    s.split('').forEach(e => {
-        if (e === 'U') {
+    for (let i = 0; i < n; i++) {
+        if (s.charAt(i) === 'U') {
             if (counter === -1) {
                 uCount ++;
             }
             counter ++;
         }
-        else if (e === 'D') {
+        else if (s.charAt(i) === 'D') {
             counter --;
         }
         else return;
-    });
+    };
     return uCount;
 }
 
